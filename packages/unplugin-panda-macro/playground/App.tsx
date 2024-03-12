@@ -1,8 +1,11 @@
 import { css, cva } from './styled-system/css'
 import { center } from './styled-system/patterns'
 import { button } from './styled-system/recipes'
-import { Stack, styled } from './styled-system/jsx'
+import { styled } from './styled-system/jsx'
 import 'virtual:panda.css'
+
+const Stack = ({ children }: any) => <div data-testid="stack">stack{children}</div>
+const Stack2 = ({ children }: any) => <div data-testid="stack">stack{children}</div>
 
 const overrides = css.raw({
   bg: 'green.100',
@@ -48,6 +51,10 @@ export const App = () => {
           <styled.div border="2px solid token(colors.red.300)">🐼</styled.div>
           <span>Hello from Panda</span>
         </Stack>
+        <Stack2 fontSize="2xl">
+          <styled.div border="2px solid token(colors.red.300)">🐼</styled.div>
+          <span>Hello from Panda</span>
+        </Stack2>
       </div>
       <div className={button({ size: 'lg', visual: 'funky' })}>Button</div>
       <div className={atomicRecipe({ visual: 'solid', size: 'sm' })}>Atomic Button</div>
